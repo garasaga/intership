@@ -14,11 +14,7 @@ class BigRandom:
         x = open('data.txt', 'r')
         for i in range(10000):
             j = x.readline()    #52411
-            for item in j :  #393754393
-                if(kondisi == True and item == "#"):
-                    noh += 1
-                if item == "#":
-                    kondisi = True
+            noh += j.count("#")
         x.close()
         kondisi1 = False
         x = open('data.txt', 'r')
@@ -30,7 +26,8 @@ class BigRandom:
                 if(item == "#"):
                     kondisi1 = True
         x.close()
-        print noh
+        noh -= 10000 #karena ada 10000 penunjuk baris
+        print noh  
         print suc
         return (noh, suc)
 
